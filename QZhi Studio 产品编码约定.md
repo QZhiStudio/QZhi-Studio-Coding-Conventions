@@ -423,13 +423,13 @@ Security
     例如：
     ```basic
         MoveWindow hWndTabMain, _
-        (picSplitter1.Visible And 1) * (picSplitter1.Left + picSplitter1.Width), _
-        rbMain.rcClientRect.Bottom, _
-        Me.ScaleWidth - ((picSplitter1.Visible And 1) * (picSplitter1.Left + picSplitter1.Width)), _
-        (((Not picSplitter2.Visible) And 1) * (Me.ScaleHeight - staStatus.rcClientRect.Bottom)) + ((picSplitter2.Visible And 1) * picSplitter2.Top) - rbMain.rcClientRect.Bottom, _
-        False
+            (picSplitter1.Visible And 1) * (picSplitter1.Left + picSplitter1.Width), _
+            rbMain.rcClientRect.Bottom, _
+            Me.ScaleWidth - ((picSplitter1.Visible And 1) * (picSplitter1.Left + picSplitter1.Width)), _
+            (((Not picSplitter2.Visible) And 1) * (Me.ScaleHeight - staStatus.rcClientRect.Bottom)) + ((picSplitter2.Visible And 1) * picSplitter2.Top) - rbMain.rcClientRect.Bottom, _
+            False
         
-    UpdateControlRect tabMain
+        UpdateControlRect tabMain
     ```
 * 连续多行赋值代码，保持“=”整齐
 
