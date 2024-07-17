@@ -57,7 +57,7 @@
 <li><a href="#readme-%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%80%E8%88%AC%E6%A0%BC%E5%BC%8F">ReadMe 文件的一般格式</a></li>
 </ul>
 </li>
-<li><a href="#commit-message-%E7%BA%A6%E5%AE%9A%E6%A0%B9%E6%8D%AE-httpsruanyifengcomblog201601commit_message_change_loghtml-%E6%95%B4%E7%90%86%E6%94%B9%E5%86%99">Commit message 约定（根据 https://ruanyifeng.com/blog/2016/01/commit_message_change_log.html 整理改写）</a>
+<li><a href="#commit-message-%E7%BA%A6%E5%AE%9A%E6%A0%B9%E6%8D%AE-httpsruanyifengcomblog201601commit_message_change_loghtml-%E5%92%8C-httpsblogcsdnnethzf0701articledetails134367234-%E6%95%B4%E7%90%86%E6%94%B9%E5%86%99">Commit message 约定（根据 https://ruanyifeng.com/blog/2016/01/commit_message_change_log.html 和 https://blog.csdn.net/hzf0701/article/details/134367234 整理改写）</a>
 <ul>
 <li><a href="#%E7%AE%80%E6%98%8E%E7%9A%84-commit-message">简明的 Commit message</a>
 <ul>
@@ -105,7 +105,19 @@
 <h2 id="时间约定">时间约定 </h2>
 <p>请按照 <code>hh:mm</code> 的格式，二十四小时制</p>
 <h2 id="版本约定">版本约定 </h2>
-<p>请参照 <a href="https://semver.org/lang/zh-CN/">https://semver.org/lang/zh-CN/</a></p>
+<p>产品版本格式为 <code>主版本号.次版本号.修订号[-先行版本信息][+版本编译信息]</code></p>
+<p>具体版本号制定请参照 <a href="https://semver.org/lang/zh-CN/">https://semver.org/lang/zh-CN/</a></p>
+<p>先行版本信息需要以软件开发的各时期来填写。</p>
+<dl>
+<dt>Alpha 期（内部测试期）</dt>
+<dd>软件起始阶段，极不稳定，不需要写 Commit message 和 Update log，不公开发布</dd>
+<dt>Beta 期（公开测试期）</dt>
+<dd>软件主要功能已完善，公开测试，需要写 Commit message 和 Update log，可以增加新功能</dd>
+<dt>RC 期（预发行期）</dt>
+<dd>软件已实现规划的所有功能，公开测试，需要写 Commit message 和 Update log，不可以增加新功能</dd>
+<dt>Release 期</dt>
+<dd>最终发布版本</dd>
+</dl>
 <h2 id="使用开源协议">使用开源协议 </h2>
 <p>为了践行开源精神，一般情况下，请选择 Apache 2.0 开源协议。</p>
 <p>要求：</p>
@@ -295,25 +307,34 @@ License: [name of license]
             └─modules
 </code></pre>可以使用 Windows 下的 <code>tree</code> 命令来生成目录结构，若有需要，还应写上注释</li>
 </ul>
-<h2 id="commit-message-约定根据-httpsruanyifengcomblog201601commit_message_change_loghtml-整理改写">Commit message 约定（根据 <a href="https://ruanyifeng.com/blog/2016/01/commit_message_change_log.html">https://ruanyifeng.com/blog/2016/01/commit_message_change_log.html</a> 整理改写） </h2>
+<h2 id="commit-message-约定根据-httpsruanyifengcomblog201601commit_message_change_loghtml-和-httpsblogcsdnnethzf0701articledetails134367234-整理改写">Commit message 约定（根据 <a href="https://ruanyifeng.com/blog/2016/01/commit_message_change_log.html">https://ruanyifeng.com/blog/2016/01/commit_message_change_log.html</a> 和 <a href="https://blog.csdn.net/hzf0701/article/details/134367234">https://blog.csdn.net/hzf0701/article/details/134367234</a> 整理改写） </h2>
 <h3 id="简明的-commit-message">简明的 Commit message </h3>
 <p>简明的 Commit message 为 <code>type</code> + <code>subject</code></p>
+<p>在 Alpha 阶段，不要求写 Commit message</p>
 <h4 id="type">type </h4>
 <dl>
 <dt>feat</dt>
 <dd>新功能（feature）</dd>
 <dt>fix</dt>
-<dd>修补bug</dd>
+<dd>完整的修复 bug</dd>
+<dt>to</dt>
+<dd>在一定条件下修复 bug</dd>
 <dt>docs</dt>
 <dd>文档（documentation）</dd>
 <dt>style</dt>
 <dd>格式（不影响代码运行的变动，即代码风格更改）</dd>
 <dt>refactor</dt>
 <dd>重构（即不是新增功能，也不是修改bug的代码变动）</dd>
+<dt>perf</dt>
+<dd>代码优化</dd>
 <dt>test</dt>
 <dd>增加测试</dd>
 <dt>chore</dt>
 <dd>构建过程或辅助工具的变动</dd>
+<dt>merge</dt>
+<dd>代码合并</dd>
+<dt>sync</dt>
+<dd>同步主线或分支的Bug</dd>
 </dl>
 <h4 id="subject">subject </h4>
 <p>一般以英语写，要求</p>

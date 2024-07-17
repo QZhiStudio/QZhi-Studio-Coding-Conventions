@@ -23,7 +23,7 @@
   - [ReadMe 约定](#readme-约定)
     - [使用 ReadMe 文件的要求](#使用-readme-文件的要求)
     - [ReadMe 文件的一般格式](#readme-文件的一般格式)
-  - [Commit message 约定（根据 https://ruanyifeng.com/blog/2016/01/commit\_message\_change\_log.html 整理改写）](#commit-message-约定根据-httpsruanyifengcomblog201601commit_message_change_loghtml-整理改写)
+  - [Commit message 约定（根据 https://ruanyifeng.com/blog/2016/01/commit\_message\_change\_log.html 和 https://blog.csdn.net/hzf0701/article/details/134367234 整理改写）](#commit-message-约定根据-httpsruanyifengcomblog201601commit_message_change_loghtml-和-httpsblogcsdnnethzf0701articledetails134367234-整理改写)
     - [简明的 Commit message](#简明的-commit-message)
       - [type](#type)
       - [subject](#subject)
@@ -67,7 +67,23 @@
 
 ## 版本约定
 
-请参照 https://semver.org/lang/zh-CN/
+产品版本格式为 `主版本号.次版本号.修订号[-先行版本信息][+版本编译信息]`
+
+具体版本号制定请参照 https://semver.org/lang/zh-CN/
+
+先行版本信息需要以软件开发的各时期来填写。
+
+Alpha 期（内部测试期）
+: 软件起始阶段，极不稳定，不需要写 Commit message 和 Update log，不公开发布
+
+Beta 期（公开测试期）
+: 软件主要功能已完善，公开测试，需要写 Commit message 和 Update log，可以增加新功能
+
+RC 期（预发行期）
+: 软件已实现规划的所有功能，公开测试，需要写 Commit message 和 Update log，不可以增加新功能
+
+Release 期
+: 最终发布版本
 
 ## 使用开源协议
 
@@ -310,11 +326,13 @@ rcscripts
     ```
     可以使用 Windows 下的 `tree` 命令来生成目录结构，若有需要，还应写上注释
 
-## Commit message 约定（根据 https://ruanyifeng.com/blog/2016/01/commit_message_change_log.html 整理改写）
+## Commit message 约定（根据 https://ruanyifeng.com/blog/2016/01/commit_message_change_log.html 和 https://blog.csdn.net/hzf0701/article/details/134367234 整理改写）
 
 ### 简明的 Commit message
 
 简明的 Commit message 为 `type` + `subject`
+
+在 Alpha 阶段，不要求写 Commit message
 
 #### type
 
@@ -322,7 +340,10 @@ feat
 : 新功能（feature）
 
 fix
-: 修补bug
+: 完整的修复 bug
+
+to
+: 在一定条件下修复 bug
 
 docs
 : 文档（documentation）
@@ -333,11 +354,20 @@ style
 refactor
 : 重构（即不是新增功能，也不是修改bug的代码变动）
 
+perf
+: 代码优化
+
 test
 : 增加测试
 
 chore
 : 构建过程或辅助工具的变动
+
+merge
+: 代码合并
+
+sync
+: 同步主线或分支的Bug
 
 #### subject
 
